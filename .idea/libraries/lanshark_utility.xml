@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="lanshark-utility">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../LANShark Utility/out/artifacts/lanshark_utility_jar/lanshark-utility.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../IntelliJ Projects/LANShark Utility/out/artifacts/lanshark_utility_jar/lanshark-utility.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

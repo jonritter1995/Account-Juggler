@@ -4,7 +4,9 @@ import javax.swing.*;
 
 public class MainGUI
 {
-
+    /**
+     * Created by IntelliJ
+     */
     private JPanel mainPanel;
     private JPanel accountListPanel;
     private JList accountList;
@@ -29,17 +31,61 @@ public class MainGUI
     private JLabel emailLabel;
     private JLabel pinLabel;
     private JPanel emailPanel;
-    private JComboBox comboBox1;
-    private JButton addButton;
-    private JTextField textField1;
-    private JTextField textField2;
+    private JComboBox emailDropdown;
+    private JButton emailButton;
+    private JTextField emailIDField;
+    private JTextField emailAddressField;
+    private JPanel securityQuestionPanel;
+    private JLabel emailIDLabel;
+    private JLabel emailAddressLabel;
+    private JLabel secQuestionLabel;
+    private JComboBox secQuestionDropdown;
+    private JButton secQuestionButton;
+    private JLabel questionLabel;
+    private JTextField questionField;
+    private JLabel answerLabel;
+    private JTextField answerField;
+    private JPanel customFieldPanel;
+    private JLabel customFieldLabel;
+    private JComboBox customFieldDropdown;
+    private JButton customFieldButton;
+    private JLabel fieldLabel;
+    private JTextField fieldField;
+    private JLabel valueLabel;
+    private JTextField valueField;
+    private JPanel notePanel;
+    private JLabel noteLabel;
+    private JTextField noteField;
+    private JButton newAccountButton;
+    private JButton deleteAccountButton;
+    private JButton saveAccountButton;
+
+    /**
+     * Created manually
+     */
+    JMenuBar menuBar;
+    JMenu fileMenu;
+    JMenuItem settingsMenuItem;
+    JMenuItem exitMenuItem;
+
 
     public MainGUI()
     {
         accountList.setModel(new DefaultListModel());
 
+        menuBar = new JMenuBar();
+        fileMenu = new JMenu("File");
+        settingsMenuItem = new JMenuItem("Settings");
+        exitMenuItem = new JMenuItem("Exit");
+
+        fileMenu.add(settingsMenuItem);
+        fileMenu.add(exitMenuItem);
+        menuBar.add(fileMenu);
+        menuBar.add(fileMenu);
+
         JFrame frame = new JFrame();
         frame.setContentPane(this.mainPanel);
+        frame.setJMenuBar(menuBar);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setLocationRelativeTo(null);

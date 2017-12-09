@@ -1,6 +1,7 @@
 package com.lanshark.software.security.passwordmanager;
 
 import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.MainGUI;
+import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.PasswordGeneratorDialog;
 
 import javax.swing.UIManager;
 
@@ -43,6 +44,7 @@ public class Main
         System.out.println(account.getNote());*/
 
         new MainGUI();
+        new PasswordGeneratorDialog().setVisible(true);
     }
 
 }

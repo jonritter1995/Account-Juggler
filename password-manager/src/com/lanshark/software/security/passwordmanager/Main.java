@@ -43,8 +43,12 @@ public class Main
         System.out.println(account.getPin());
         System.out.println(account.getNote());*/
 
-        new MainGUI();
-        new PasswordGeneratorDialog().setVisible(true);
+        //new MainGUI();
+        FileManager f = new FileManager("C:/Users/Jonathan/Desktop/password_file.xml");
+        AccountManager manager = new AccountManager(f.loadAccounts(""));
+        System.out.println(manager.toString());
+        manager.getAccountByName("Walmart").setAccountName("target");
+        f.savePasswordFile(manager.getAllAccounts(), "");
     }
 
 }

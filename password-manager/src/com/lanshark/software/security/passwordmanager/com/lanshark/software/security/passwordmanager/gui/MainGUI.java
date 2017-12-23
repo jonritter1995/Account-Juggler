@@ -1,6 +1,9 @@
 package com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusAdapter;
 
 public class MainGUI
 {
@@ -56,15 +59,16 @@ public class MainGUI
     private JPanel notePanel;
     private JLabel noteLabel;
     private JTextField noteField;
-    private JButton newAccountButton;
+    private JButton clearButton;
     private JButton deleteAccountButton;
-    private JButton saveAccountButton;
+    private JButton addButton;
 
     /**
      * Created manually
      */
     JMenuBar menuBar;
     JMenu fileMenu;
+    JMenuItem saveMenuItem;
     JMenuItem settingsMenuItem;
     JMenuItem exitMenuItem;
 
@@ -75,9 +79,11 @@ public class MainGUI
 
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
+        saveMenuItem = new JMenuItem("Save");
         settingsMenuItem = new JMenuItem("Settings");
         exitMenuItem = new JMenuItem("Exit");
 
+        fileMenu.add(saveMenuItem);
         fileMenu.add(settingsMenuItem);
         fileMenu.add(exitMenuItem);
         menuBar.add(fileMenu);
@@ -90,6 +96,15 @@ public class MainGUI
         frame.pack();
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        generatePasswordButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                new PasswordGeneratorDialog().setVisible(true);
+            }
+        });
+        accountEditorPanel.addFocusListener(new FocusAdapter() {
+        });
     }
 
 }

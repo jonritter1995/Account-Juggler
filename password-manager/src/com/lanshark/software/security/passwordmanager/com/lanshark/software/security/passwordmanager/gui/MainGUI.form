@@ -357,16 +357,16 @@
               </component>
             </children>
           </grid>
-          <component id="efaf4" class="javax.swing.JButton" binding="saveAccountButton" default-binding="true">
+          <component id="efaf4" class="javax.swing.JButton" binding="addButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="Save Account"/>
+              <text value="Add"/>
             </properties>
           </component>
-          <component id="705ad" class="javax.swing.JButton" binding="newAccountButton" default-binding="true">
+          <component id="705ad" class="javax.swing.JButton" binding="clearButton" default-binding="true">
             <constraints/>
             <properties>
-              <text value="New Account"/>
+              <text value="Clear"/>
             </properties>
           </component>
         </children>

@@ -15,8 +15,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
+            <state relative-caret-position="815">
+              <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -24,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PasswordGeneratorDialog.form" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PasswordGeneratorDialog.form" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.form">
           <provider selected="true" editor-type-id="ui-designer">
             <state />
@@ -34,8 +34,8 @@
       <file leaf-file-name="PasswordGeneratorDialog.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="715">
-              <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+            <state relative-caret-position="986">
+              <caret line="59" column="41" lean-forward="false" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -51,22 +51,33 @@
       <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1">
-              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+            <state relative-caret-position="1700">
+              <caret line="105" column="63" lean-forward="false" selection-start-line="105" selection-start-column="63" selection-end-line="105" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Account.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java">
+      <file leaf-file-name="FileManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/FileManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
+            <state relative-caret-position="628">
+              <caret line="135" column="57" lean-forward="false" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7179#7180#0" expanded="true" />
-                <element signature="e#7231#7232#0" expanded="true" />
+                <element signature="e#5150#5159#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Account.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="352" column="25" lean-forward="true" selection-start-line="352" selection-start-column="25" selection-end-line="352" selection-end-column="25" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,9 +86,12 @@
       <file leaf-file-name="AccountManager.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/AccountManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="543">
+              <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+              <folding>
+                <element signature="e#1234#1235#0" expanded="true" />
+                <element signature="e#1270#1271#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,7 +99,7 @@
       <file leaf-file-name="PasswordGenerator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/PasswordGenerator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
+            <state relative-caret-position="680">
               <caret line="42" column="92" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="92" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -122,23 +136,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java" />
-        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/AccountManager.java" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/PasswordGenerator.java" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.form" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.fxml" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.java" />
-        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.form" />
-        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java" />
-        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.java" />
         <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.form" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.form" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/PasswordFileManager.java" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/AccountManager.java" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/FileManager.java" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java" />
+        <option value="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="279" />
-    <option name="y" value="50" />
+    <option name="x" value="551" />
+    <option name="y" value="194" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
@@ -157,6 +173,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -176,19 +193,11 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="passwordmanager" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Password-Jester" type="b2602c69:ProjectViewProjectNode" />
-              <item name="password-manager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="passwordmanager" type="462c0819:PsiDirectoryNode" />
-              <item name="gui" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -345,6 +354,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="10d8c806-79ac-45c8-90fb-0f4a07e3d223" name="Default" comment="" />
@@ -366,7 +378,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32986626" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.21768202" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -390,36 +402,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="25" column="32" lean-forward="false" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3825">
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -428,7 +422,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -471,8 +468,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -481,7 +476,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -524,8 +522,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -534,7 +530,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -577,8 +576,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -587,7 +584,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -630,8 +630,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -640,7 +638,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -675,8 +676,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -685,7 +684,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="false" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -716,8 +718,6 @@
           <caret line="260" column="23" lean-forward="false" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -726,7 +726,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="59" column="5" lean-forward="true" selection-start-line="59" selection-start-column="5" selection-end-line="59" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -744,43 +747,11 @@
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.form" />
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.fxml" />
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/GUI.java" />
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java">
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="45" column="59" lean-forward="false" selection-start-line="45" selection-start-column="59" selection-end-line="45" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7179#7180#0" expanded="true" />
-            <element signature="e#7231#7232#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/AccountManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="21" lean-forward="false" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="21" />
+        <state relative-caret-position="1700">
+          <caret line="105" column="63" lean-forward="false" selection-start-line="105" selection-start-column="63" selection-end-line="105" selection-end-column="63" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/PasswordGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="42" column="92" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="46" column="54" lean-forward="false" selection-start-line="46" selection-start-column="54" selection-end-line="46" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -789,25 +760,76 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/MainGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1">
-          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
-          <folding />
-        </state>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.form">
+      <provider selected="true" editor-type-id="ui-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="715">
-          <caret line="60" column="41" lean-forward="false" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
+        <state relative-caret-position="986">
+          <caret line="59" column="41" lean-forward="false" selection-start-line="59" selection-start-column="41" selection-end-line="59" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/com/lanshark/software/security/passwordmanager/gui/PasswordGeneratorDialog.form">
-      <provider selected="true" editor-type-id="ui-designer">
-        <state />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/io/ByteArrayInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="105" column="0" lean-forward="false" selection-start-line="105" selection-start-column="0" selection-end-line="105" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/PasswordGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="42" column="92" lean-forward="false" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="92" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/FileManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="135" column="57" lean-forward="false" selection-start-line="135" selection-start-column="57" selection-end-line="135" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5150#5159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="815">
+          <caret line="49" column="35" lean-forward="false" selection-start-line="49" selection-start-column="35" selection-end-line="49" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/AccountManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="543">
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+          <folding>
+            <element signature="e#1234#1235#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/passwordmanager/Account.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="352" column="25" lean-forward="true" selection-start-line="352" selection-start-column="25" selection-end-line="352" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>

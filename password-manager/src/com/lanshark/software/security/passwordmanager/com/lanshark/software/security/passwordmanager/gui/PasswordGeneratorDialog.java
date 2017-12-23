@@ -49,7 +49,6 @@ public class PasswordGeneratorDialog extends JDialog
     private JButton resetButton;
     private JTextField textField1;
     private JButton generateButton;
-    private JTextField textField2;
 
     public PasswordGeneratorDialog()
     {

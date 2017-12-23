@@ -343,12 +343,57 @@ public class Account
     /**
      * Determines if two Account objects are equal in value.
      *
-     * @param other		The Account object to compare to.
+     * @param obj		The Account object to compare to.
      * @return			True if the Account objects share the same accountName.
      */
-    public boolean equals(Account other)
+    @Override
+    public boolean equals(Object obj)
     {
-        return this.accountName.equals(other.accountName);
+        if (obj == null)
+            return false;
+        else
+            return this.accountName.equals(((Account)obj).getAccountName());
     }
 
+    /**
+     * Returns a string containing each property of the Account on a separate line.
+     *
+     * @return  The Account details as a String.
+     */
+    @Override
+    public String toString()
+    {
+        String emailString = "";
+        String questionString = "";
+        String fieldString = "";
+
+        for (int i = 0; i < this.emailAddresses.size(); i++)
+        {
+            emailString += "\t" + this.emailAddresses.get(i).getKey() + ": " + this.emailAddresses.get(i).getValue() + "\n";
+        }
+
+        for (int i = 0; i < this.securityQuestions.size(); i++)
+        {
+            questionString += "\t" + this.securityQuestions.get(i).getKey() + ": " + this.securityQuestions.get(i).getValue() + "\n";
+        }
+
+        for (int i = 0; i < this.customFields.size(); i++)
+        {
+            fieldString += "\t" + this.customFields.get(i).getKey() + ": " + this.customFields.get(i).getValue() + "\n";
+        }
+
+        String accountAsString = "Account: " + this.accountName + "\n" +
+                "Username: " + this.username + "\n" +
+                "Password: " + this.password + "\n" +
+                "Pin: " + this.pin + "\n" +
+                "Email Addresses:" + "\n" +
+                emailString +
+                "Security Question:" + "\n" +
+                questionString +
+                "Custom Fields:" + "\n" +
+                fieldString +
+                "Note: " + this.note;
+
+        return accountAsString;
+    }
 }

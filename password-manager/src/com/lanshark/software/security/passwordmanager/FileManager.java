@@ -11,6 +11,7 @@ import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
 import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
+import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -26,6 +27,7 @@ import java.security.InvalidKeyException;
 import java.security.Key;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * Manages the reading and writing of the file containing passwords and account information.
@@ -33,28 +35,60 @@ import java.util.ArrayList;
  */
 public class FileManager
 {
-
+    /**
+     * The encryption algorithm String.
+     */
     private static final String ALGORITHM = "AES";
-    private static final String TRANSFORMATION = "AES";
 
+    /**
+     * The encryption transformation String.
+     */
+    private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+
+    /**
+     * The path to the user's password file.
+     */
     private String filePath;
 
+    /**
+     * The user's password file.
+     */
     private File passwordFile;
 
+    /**
+     * The XML document that represents the AccountManager.
+     */
     private Document document;
 
+    /**
+     * Creates a new FileManager object.
+     *
+     * @param filePath  The file path of the user's password file.
+     */
     public FileManager(String filePath)
     {
         this.filePath = filePath;
     }
 
+    /**
+     * Loads a list of accounts from the password file.
+     *
+     * @param masterPass    The password to decrypt the file with.
+     * @return              An ArrayList of Account objects.
+     */
     public ArrayList<Account> loadAccounts(String masterPass)
     {
         readAccountFile(masterPass);
         return parseAccountDOM();
     }
 
-    public void savePasswordFile(ArrayList<Account> accountList, String masterPass)
+    /**
+     * Saves the given list of Account objects to the account file and encrypts it.
+     *
+     * @param accountList   The current list of Account objects.
+     * @param masterPass    The password to encrypt the file with.
+     */
+    public void saveAccounts(ArrayList<Account> accountList, String masterPass)
     {
         updateDocument(accountList);
         writeDocumentToFile(masterPass);
@@ -62,6 +96,8 @@ public class FileManager
 
     /**
      * Initialized the Document object that contains the XML representation of the user's Account list.
+     *
+     * @param masterPass    The password to use for decrypting the account file.
      */
     private void readAccountFile(String masterPass)
     {
@@ -69,7 +105,10 @@ public class FileManager
         ByteArrayInputStream xmlData = null;
         DocumentBuilderFactory dbf = null;
         DocumentBuilder db = null;
-        passwordFile = new File(filePath);
+
+        if (passwordFile == null)
+            passwordFile = new File(filePath);
+
         byte[] encryptedData = new byte[(int)passwordFile.length()];
 
         try
@@ -113,6 +152,11 @@ public class FileManager
         }
     }
 
+    /**
+     * Writes the XML representation of the account list to a file.
+     *
+     * @param masterPass    The password to encrypt the file with.
+     */
     private void writeDocumentToFile(String masterPass)
     {
         TransformerFactory tf = null;
@@ -123,6 +167,9 @@ public class FileManager
         ByteArrayOutputStream byteOutputStream = null;
         ByteArrayInputStream byteInputStream = null;
 
+        if (passwordFile == null)
+            passwordFile = new File(filePath);
+
         try {
             tf = TransformerFactory.newInstance();
             t = tf.newTransformer();
@@ -130,10 +177,15 @@ public class FileManager
             byteOutputStream = new ByteArrayOutputStream();
             result = new StreamResult(byteOutputStream);
             t.transform(domSource, result);
+            int length = byteOutputStream.toByteArray().length;
             byteInputStream = new ByteArrayInputStream(
                     encryptDecrypt(Cipher.ENCRYPT_MODE, masterPass, byteOutputStream.toByteArray())
             );
-            fout = new FileOutputStream(new File(filePath));
+            byte[] temp = new byte[length];
+            byteInputStream.read(temp, 0, length);
+            byteOutputStream = new ByteArrayOutputStream();
+            byteOutputStream.write(temp, 0, length);
+            fout = new FileOutputStream(passwordFile);
             byteOutputStream.writeTo(fout);
         } catch (TransformerConfigurationException e) {
             e.printStackTrace();
@@ -297,19 +349,19 @@ public class FileManager
      */
     public byte[] encryptDecrypt(int cipherMode, String key, byte[] data)
     {
-
         if ("".equals(key) || key == null)
             return data;
 
         byte[] result = null;
+        byte[] ivByte = null;
 
         try
         {
-            Key secretKey = new SecretKeySpec(key.getBytes(), ALGORITHM);
-            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
-            cipher.init(cipherMode, secretKey);
-
-            FileInputStream fin = new FileInputStream(passwordFile);
+            Key secretKey = new SecretKeySpec(padKey(key), "AES");
+            Cipher cipher = Cipher.getInstance("AES");
+            //ivByte = new byte[cipher.getBlockSize()];
+            //IvParameterSpec ivParamSpec = new IvParameterSpec(ivByte);
+            cipher.init(cipherMode, secretKey/*, ivParamSpec*/);
             result = cipher.doFinal(data);
         }
         catch (NoSuchAlgorithmException e)
@@ -324,10 +376,7 @@ public class FileManager
         {
             e.printStackTrace();
         }
-        catch (FileNotFoundException e)
-        {
-            e.printStackTrace();
-        } catch (BadPaddingException e)
+        catch (BadPaddingException e)
         {
             e.printStackTrace();
         }
@@ -339,6 +388,22 @@ public class FileManager
         {
             return result;
         }
+    }
+
+    /**
+     * Pads the key if it is not 16 or 32 bytes.
+     *
+     * @param key   The master key to pad.
+     * @return      A padded key of length 16/32.
+     * todo cap length at 32 bytes.
+     */
+    private byte[] padKey(String key)
+    {
+        if (key.length() % 16 == 0)
+            return key.getBytes();
+
+        int length = (key.length() / 16) * 16 + 16;
+        return Arrays.copyOf(key.getBytes(), length);
     }
 
 }

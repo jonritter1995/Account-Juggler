@@ -1,12 +1,18 @@
 package com.lanshark.software.security.passwordmanager;
 
 import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.MainGUI;
-import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.PasswordGeneratorDialog;
 
+import javax.crypto.Cipher;
 import javax.swing.UIManager;
+import java.io.*;
 
 public class Main
 {
+
+    public static MainGUI mainGUI;
+    public static FileManager fileManager;
+    public static AccountManager accountManager;
+    public static SettingsManager settingsManager;
 
     public static void main(String[] args)
     {
@@ -27,28 +33,13 @@ public class Main
             e.printStackTrace();
         }
 
-        /*PasswordGenerator pg = new PasswordGenerator(20);
-        Account account = new Account("Walmart");
-        account.addEmail("Primary", "jonathan_ritter@troweprice.com");
-        account.setUsername("jonritter1995");
-        account.setPassword(pg.generatePassword());
-        account.setPin("1995");
-        account.addSecurityQuestion("What is your mother's maiden name?", "hargest");
-        account.setNote("For shopping online at wally world.");
 
-        System.out.println(account.getAccountName());
-        System.out.println(account.getEmailAddress("Primary"));
-        System.out.println(account.getUsername());
-        System.out.println(account.getPassword());
-        System.out.println(account.getPin());
-        System.out.println(account.getNote());*/
+        mainGUI = new MainGUI();
+        fileManager = new FileManager("C:/Users/Jonathan/Desktop/password_file.xml");
+        //accountManager = new AccountManager(fileManager.loadAccounts("E1d3rS(r011$"));
+        //System.out.println(accountManager.toString());
+        //fileManager.saveAccounts(accountManager.getAllAccounts(), "E1d3rS(r011$");
 
-        //new MainGUI();
-        FileManager f = new FileManager("C:/Users/Jonathan/Desktop/password_file.xml");
-        AccountManager manager = new AccountManager(f.loadAccounts(""));
-        System.out.println(manager.toString());
-        manager.getAccountByName("Walmart").setAccountName("target");
-        f.savePasswordFile(manager.getAllAccounts(), "");
     }
 
 }

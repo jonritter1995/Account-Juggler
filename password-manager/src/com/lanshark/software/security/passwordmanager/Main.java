@@ -36,10 +36,17 @@ public class Main
 
         mainGUI = new MainGUI();
         fileManager = new FileManager("C:/Users/Jonathan/Desktop/password_file.xml");
-        //accountManager = new AccountManager(fileManager.loadAccounts("E1d3rS(r011$"));
-        //System.out.println(accountManager.toString());
-        //fileManager.saveAccounts(accountManager.getAllAccounts(), "E1d3rS(r011$");
 
+        /*try {
+            File f = new File("C:/Users/Jonathan/Desktop/encrypted.txt");
+            FileInputStream fin = new FileInputStream(f);
+            byte[] b = new byte[(int)f.length()];
+            fin.read(b);
+            System.out.println(new String(fileManager.encryptDecrypt(Cipher.DECRYPT_MODE, "1234567890123456", b)));
+        } catch (Exception ex) { ex.printStackTrace();}*/
+        accountManager = new AccountManager(fileManager.loadAccounts("elderscrolls"));
+        System.out.println(accountManager.toString());
+        fileManager.saveAccounts(accountManager.getAllAccounts(), "elderscrolls");
     }
 
 }

@@ -43,7 +43,7 @@ public class FileManager
     /**
      * The encryption transformation String.
      */
-    private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+    private static final String TRANSFORMATION = "AES";
 
     /**
      * The path to the user's password file.
@@ -164,45 +164,46 @@ public class FileManager
         DOMSource domSource = null;
         StreamResult result = null;
         FileOutputStream fout = null;
-        ByteArrayOutputStream byteOutputStream = null;
+        ByteArrayOutputStream xmlByteStream = null;
+        ByteArrayOutputStream encryptedByteStream = null;
         ByteArrayInputStream byteInputStream = null;
 
         if (passwordFile == null)
             passwordFile = new File(filePath);
 
-        try {
+        try
+        {
             tf = TransformerFactory.newInstance();
             t = tf.newTransformer();
             domSource = new DOMSource(document);
-            byteOutputStream = new ByteArrayOutputStream();
-            result = new StreamResult(byteOutputStream);
+            xmlByteStream = new ByteArrayOutputStream();
+            result = new StreamResult(xmlByteStream);
             t.transform(domSource, result);
-            int length = byteOutputStream.toByteArray().length;
-            byteInputStream = new ByteArrayInputStream(
-                    encryptDecrypt(Cipher.ENCRYPT_MODE, masterPass, byteOutputStream.toByteArray())
-            );
-            byte[] temp = new byte[length];
-            byteInputStream.read(temp, 0, length);
-            byteOutputStream = new ByteArrayOutputStream();
-            byteOutputStream.write(temp, 0, length);
+            byte[] inputBytes = encryptDecrypt(Cipher.ENCRYPT_MODE, masterPass, xmlByteStream.toByteArray());
+            encryptedByteStream = new ByteArrayOutputStream();
+            encryptedByteStream.write(inputBytes);
             fout = new FileOutputStream(passwordFile);
-            byteOutputStream.writeTo(fout);
-        } catch (TransformerConfigurationException e) {
-            e.printStackTrace();
-        } catch (TransformerException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+            encryptedByteStream.writeTo(fout);
         }
-        finally {
+        catch (Exception ex)
+        {
+            ex.printStackTrace();
+        }
+        finally
+        {
             if (fout != null)
-                try {
+            {
+                try
+                {
                     fout.close();
-                } catch (IOException e) {
+                    xmlByteStream.close();
+                    encryptedByteStream.close();
+                }
+                catch (IOException e)
+                {
                     e.printStackTrace();
                 }
+            }
         }
     }
 
@@ -353,15 +354,13 @@ public class FileManager
             return data;
 
         byte[] result = null;
-        byte[] ivByte = null;
+        System.out.println(data.length);
 
         try
         {
-            Key secretKey = new SecretKeySpec(padKey(key), "AES");
-            Cipher cipher = Cipher.getInstance("AES");
-            //ivByte = new byte[cipher.getBlockSize()];
-            //IvParameterSpec ivParamSpec = new IvParameterSpec(ivByte);
-            cipher.init(cipherMode, secretKey/*, ivParamSpec*/);
+            Key secretKey = new SecretKeySpec(padKey(key), ALGORITHM);
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION);
+            cipher.init(cipherMode, secretKey);
             result = cipher.doFinal(data);
         }
         catch (NoSuchAlgorithmException e)
@@ -399,11 +398,8 @@ public class FileManager
      */
     private byte[] padKey(String key)
     {
-        if (key.length() % 16 == 0)
-            return key.getBytes();
-
-        int length = (key.length() / 16) * 16 + 16;
-        return Arrays.copyOf(key.getBytes(), length);
+        return (key.getBytes().length % 16 == 0 ? key.getBytes() : Arrays.copyOf(key.getBytes(),
+                (key.getBytes().length / 16) * 16 + 16));
     }
 
 }

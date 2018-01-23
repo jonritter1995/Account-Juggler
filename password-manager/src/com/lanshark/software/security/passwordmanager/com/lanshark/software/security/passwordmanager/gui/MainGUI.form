@@ -35,12 +35,25 @@
               </component>
             </children>
           </scrollpane>
-          <component id="23877" class="javax.swing.JButton" binding="deleteAccountButton">
+          <grid id="6ba4c" binding="accountListModifierPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
             <constraints border-constraint="South"/>
-            <properties>
-              <text value="Delete"/>
-            </properties>
-          </component>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="6ceba" class="javax.swing.JButton" binding="addAccountButton">
+                <constraints border-constraint="North"/>
+                <properties>
+                  <text value="Add Account"/>
+                </properties>
+              </component>
+              <component id="2b694" class="javax.swing.JButton" binding="deleteAccountButton">
+                <constraints border-constraint="South"/>
+                <properties>
+                  <text value="Delete Selected"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
       <grid id="7941" binding="accountEditorPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
@@ -357,12 +370,6 @@
               </component>
             </children>
           </grid>
-          <component id="efaf4" class="javax.swing.JButton" binding="addButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Add"/>
-            </properties>
-          </component>
           <component id="705ad" class="javax.swing.JButton" binding="clearButton" default-binding="true">
             <constraints/>
             <properties>

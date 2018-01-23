@@ -3,29 +3,18 @@ package com.lanshark.software.security.passwordmanager;
 import com.lanshark.software.util.KeyValuePair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
-import javax.crypto.BadPaddingException;
 import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
-import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerConfigurationException;
-import javax.xml.transform.TransformerException;
 import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.*;
-import java.security.InvalidKeyException;
 import java.security.Key;
-import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -118,23 +107,17 @@ public class FileManager
             xmlData = new ByteArrayInputStream(encryptDecrypt(Cipher.DECRYPT_MODE, masterPass, encryptedData));
             dbf = DocumentBuilderFactory.newInstance();
             db = dbf.newDocumentBuilder();
-            document = db.parse(xmlData);
+
+            if (encryptedData.length > 0)
+                document = db.parse(xmlData);
+            else
+                document = db.newDocument();
         }
-        catch (FileNotFoundException e)
+        catch (Exception e)
         {
+            System.err.println("Unable to read account file.\n\n");
             e.printStackTrace();
-        }
-        catch (ParserConfigurationException e)
-        {
-            e.printStackTrace();
-        }
-        catch (SAXException e)
-        {
-            e.printStackTrace();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
+            document = db.newDocument();
         }
         finally
         {
@@ -146,6 +129,7 @@ public class FileManager
                 }
                 catch (IOException e)
                 {
+                    System.err.println("Unable to close account file input stream.\n\n");
                     e.printStackTrace();
                 }
             }
@@ -187,6 +171,7 @@ public class FileManager
         }
         catch (Exception ex)
         {
+            System.err.println("Unable to write to document file.\n\n");
             ex.printStackTrace();
         }
         finally
@@ -201,6 +186,7 @@ public class FileManager
                 }
                 catch (IOException e)
                 {
+                    System.err.println("Could not close document output stream.");
                     e.printStackTrace();
                 }
             }
@@ -333,8 +319,9 @@ public class FileManager
                 rootElement.appendChild(accountElement);
             }
         }
-        catch (ParserConfigurationException e)
+        catch (Exception e)
         {
+            System.err.println("Unable to update document\n\n");
             e.printStackTrace();
         }
     }
@@ -354,7 +341,6 @@ public class FileManager
             return data;
 
         byte[] result = null;
-        System.out.println(data.length);
 
         try
         {
@@ -363,30 +349,13 @@ public class FileManager
             cipher.init(cipherMode, secretKey);
             result = cipher.doFinal(data);
         }
-        catch (NoSuchAlgorithmException e)
+        catch (Exception e)
         {
+            System.err.println("Unable to " + (cipherMode == Cipher.DECRYPT_MODE ? "decrypt " : "encrypt ") + "data\n\n");
             e.printStackTrace();
         }
-        catch (NoSuchPaddingException e)
-        {
-            e.printStackTrace();
-        }
-        catch (InvalidKeyException e)
-        {
-            e.printStackTrace();
-        }
-        catch (BadPaddingException e)
-        {
-            e.printStackTrace();
-        }
-        catch (IllegalBlockSizeException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            return result;
-        }
+
+        return result;
     }
 
     /**

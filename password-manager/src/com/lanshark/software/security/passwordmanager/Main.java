@@ -2,9 +2,9 @@ package com.lanshark.software.security.passwordmanager;
 
 import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.MainGUI;
 
-import javax.crypto.Cipher;
-import javax.swing.UIManager;
-import java.io.*;
+import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 
 public class Main
 {
@@ -16,7 +16,7 @@ public class Main
 
     public static void main(String[] args)
     {
-        // Set the UI Look and Feel to Nimbus
+        // Set the UI Look and Feel to Nimbus.
         try
         {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
@@ -33,20 +33,39 @@ public class Main
             e.printStackTrace();
         }
 
+        settingsManager = new SettingsManager();
+
+        // Make sure the password file is a valid location.
+        while (settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION) == null
+                || "".equals(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION)))
+        {
+            JOptionPane.showMessageDialog(null,
+                    "Please select a location to save your account information.");
+            JFileChooser fileChooser = new JFileChooser();
+
+            if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
+            {
+                settingsManager.setProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION, fileChooser.getSelectedFile().getPath());
+                settingsManager.saveSettings();
+                File accountFile = new File(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION));
+
+                try
+                {
+                    if (!accountFile.exists())
+                        accountFile.createNewFile();
+                }
+                catch (IOException ex)
+                {
+                    System.err.println("Could not create account file.");
+                    ex.printStackTrace();
+                }
+            }
+        }
 
         mainGUI = new MainGUI();
-        fileManager = new FileManager("C:/Users/Jonathan/Desktop/password_file.xml");
-
-        /*try {
-            File f = new File("C:/Users/Jonathan/Desktop/encrypted.txt");
-            FileInputStream fin = new FileInputStream(f);
-            byte[] b = new byte[(int)f.length()];
-            fin.read(b);
-            System.out.println(new String(fileManager.encryptDecrypt(Cipher.DECRYPT_MODE, "1234567890123456", b)));
-        } catch (Exception ex) { ex.printStackTrace();}*/
+        fileManager = new FileManager(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION));
         accountManager = new AccountManager(fileManager.loadAccounts("elderscrolls"));
-        System.out.println(accountManager.toString());
-        fileManager.saveAccounts(accountManager.getAllAccounts(), "elderscrolls");
+        //fileManager.saveAccounts(accountManager.getAllAccounts(), "elderscrolls");
     }
 
 }

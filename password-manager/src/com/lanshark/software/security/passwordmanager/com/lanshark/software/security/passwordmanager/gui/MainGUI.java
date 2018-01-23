@@ -1,6 +1,11 @@
 package com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui;
 
+import com.lanshark.software.security.passwordmanager.Account;
+import com.lanshark.software.security.passwordmanager.Main;
+
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
@@ -60,8 +65,9 @@ public class MainGUI
     private JLabel noteLabel;
     private JTextField noteField;
     private JButton clearButton;
+    private JButton addAccountButton;
     private JButton deleteAccountButton;
-    private JButton addButton;
+    private JPanel accountListModifierPanel;
 
     /**
      * Created manually
@@ -72,10 +78,13 @@ public class MainGUI
     JMenuItem settingsMenuItem;
     JMenuItem exitMenuItem;
 
+    DefaultListModel listModel;
+
 
     public MainGUI()
     {
-        accountList.setModel(new DefaultListModel());
+        listModel = new DefaultListModel<String>();
+        accountList.setModel(listModel);
 
         menuBar = new JMenuBar();
         fileMenu = new JMenu("File");
@@ -89,6 +98,8 @@ public class MainGUI
         menuBar.add(fileMenu);
         menuBar.add(fileMenu);
 
+        accountEditorPanel.setVisible(false);
+
         JFrame frame = new JFrame();
         frame.setContentPane(this.mainPanel);
         frame.setJMenuBar(menuBar);
@@ -97,13 +108,81 @@ public class MainGUI
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
 
-        generatePasswordButton.addActionListener(new ActionListener() {
+        generatePasswordButton.addActionListener(new ActionListener()
+        {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e)
+            {
                 new PasswordGeneratorDialog().setVisible(true);
             }
         });
-        accountEditorPanel.addFocusListener(new FocusAdapter() {
+
+        accountEditorPanel.addFocusListener(new FocusAdapter()
+        {
+        });
+
+        exitMenuItem.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                // todo check if user has unsaved changes and prompt to save.
+                System.exit(0);
+            }
+        });
+
+        addAccountButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                String accName = "New Account";
+                int count = 0;
+
+                while (Main.accountManager.containsAccount(accName))
+                {
+                    accName = "New Account" + "(" + count++ + ")";
+                }
+
+                int index = Main.accountManager.addAccount(accName);
+                if (index >= 0)
+                    listModel.addElement(accName);
+            }
+        });
+
+        deleteAccountButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                int index = accountList.getSelectedIndex();
+                listModel.removeElementAt(index);
+                Main.accountManager.removeAccount(index);
+
+                if (listModel.getSize() == 0)
+                    accountEditorPanel.setVisible(false);
+                else if (index - 1 < listModel.getSize() && index - 1 >= 0)
+                    accountList.setSelectedIndex(index - 1);
+                else if (index < listModel.getSize() && index >= 0)
+                    accountList.setSelectedIndex(index);
+                else if (index + 1 < listModel.getSize() && index + 1 < listModel.getSize())
+                    accountList.setSelectedIndex(index + 1);
+            }
+        });
+
+        accountList.addListSelectionListener(new ListSelectionListener()
+        {
+            @Override
+            public void valueChanged(ListSelectionEvent e)
+            {
+                if (e.getValueIsAdjusting() || accountList.getSelectedIndex() < 0)
+                    return;
+
+                if (listModel.getSize() > 0)
+                    accountEditorPanel.setVisible(true);
+
+                accountNameField.setText(Main.accountManager.getAccountByIndex(accountList.getSelectedIndex()).getAccountName());
+            }
         });
     }
 

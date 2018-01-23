@@ -29,21 +29,29 @@ public class AccountManager
      */
     public AccountManager(ArrayList<Account> list)
     {
-        this.accounts = list;
+        if (list == null)
+            this.accounts = new ArrayList<Account>();
+        else
+            this.accounts = list;
     }
 
     /**
-     * Adds an account to the list of accounts.
+     * Adds a new Account to the list of Accounts and returns the index of the Account in the
+     * list. If the List already contains an Account with the given name, -1 is returned.
      *
      * @param accountName	The name of the account that is being added.
+     * @return              The index of the new Account in the list of Accounts, -1 if account is already in the list.
      */
-    public void addAccount(String accountName)
+    public int addAccount(String accountName)
     {
         Account account = new Account(accountName);
         if (!this.accounts.contains(account))
         {
             this.accounts.add(account);
+            return this.accounts.indexOf(account);
         }
+
+        return -1;
     }
 
     /**
@@ -67,6 +75,28 @@ public class AccountManager
     }
 
     /**
+     * Removes the Account at the given index of the Account List.
+     *
+     * @param index     The index of the Account to remove from the list.
+     */
+    public void removeAccount(int index)
+    {
+        if (index >= 0 && index < this.accounts.size())
+            this.accounts.remove(index);
+    }
+
+    /**
+     * Returns the Account at the given index from the List of Accounts.
+     *
+     * @param index     The index of the Account to retrieve.
+     * @return          The Account at the given index.
+     */
+    public Account getAccountByIndex(int index)
+    {
+        return this.accounts.get(index);
+    }
+
+    /**
      * Returns the Account with the specified name.
      *
      * @param accountName	The name of the Account to return.
@@ -75,6 +105,17 @@ public class AccountManager
     public Account getAccountByName(String accountName)
     {
         return this.accounts.get(accounts.indexOf(new Account(accountName)));
+    }
+
+    /**
+     * Determines if the List of Accounts contains an Account with the given name.
+     *
+     * @param accName   The name of the Account to check the List for.
+     * @return          True if the List already contains an Account with the given name, false otherwise.
+     */
+    public boolean containsAccount(String accName)
+    {
+        return (this.accounts.indexOf(new Account(accName)) >= 0);
     }
 
     /**

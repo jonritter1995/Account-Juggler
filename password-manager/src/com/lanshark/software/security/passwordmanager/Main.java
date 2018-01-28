@@ -9,6 +9,9 @@ import java.io.IOException;
 public class Main
 {
 
+    public static final String TITLE = "Password Jester";
+    public static final String VERSION = "v0.0.1";
+
     public static MainGUI mainGUI;
     public static FileManager fileManager;
     public static AccountManager accountManager;

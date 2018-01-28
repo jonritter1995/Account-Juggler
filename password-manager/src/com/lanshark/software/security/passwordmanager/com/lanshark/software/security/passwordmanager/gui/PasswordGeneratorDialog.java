@@ -49,11 +49,14 @@ public class PasswordGeneratorDialog extends JDialog
     private JButton resetButton;
     private JTextField textField1;
     private JButton generateButton;
+    private JButton copyButton;
+    private JPanel sliderPanel;
 
     public PasswordGeneratorDialog()
     {
         setContentPane(mainPanel);
         setModal(true);
+        setTitle("Password Generator");
 
         // call onCancel() when cross is clicked
         this.pack();

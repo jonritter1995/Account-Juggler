@@ -4,11 +4,14 @@ import com.lanshark.software.security.passwordmanager.Account;
 import com.lanshark.software.security.passwordmanager.Main;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
+import java.awt.event.FocusEvent;
 
 public class MainGUI
 {
@@ -48,7 +51,6 @@ public class MainGUI
     private JLabel emailAddressLabel;
     private JLabel secQuestionLabel;
     private JComboBox secQuestionDropdown;
-    private JButton secQuestionButton;
     private JLabel questionLabel;
     private JTextField questionField;
     private JLabel answerLabel;
@@ -56,7 +58,6 @@ public class MainGUI
     private JPanel customFieldPanel;
     private JLabel customFieldLabel;
     private JComboBox customFieldDropdown;
-    private JButton customFieldButton;
     private JLabel fieldLabel;
     private JTextField fieldField;
     private JLabel valueLabel;
@@ -68,6 +69,7 @@ public class MainGUI
     private JButton addAccountButton;
     private JButton deleteAccountButton;
     private JPanel accountListModifierPanel;
+    private JButton updateAccountButton;
 
     /**
      * Created manually
@@ -100,7 +102,7 @@ public class MainGUI
 
         accountEditorPanel.setVisible(false);
 
-        JFrame frame = new JFrame();
+        JFrame frame = new JFrame(Main.TITLE + " - " + Main.VERSION);
         frame.setContentPane(this.mainPanel);
         frame.setJMenuBar(menuBar);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -147,6 +149,8 @@ public class MainGUI
                 int index = Main.accountManager.addAccount(accName);
                 if (index >= 0)
                     listModel.addElement(accName);
+
+                accountList.setSelectedIndex(index);
             }
         });
 
@@ -155,6 +159,9 @@ public class MainGUI
             @Override
             public void actionPerformed(ActionEvent e)
             {
+                if (accountList.getSelectedIndex() < 0)
+                    return;
+
                 int index = accountList.getSelectedIndex();
                 listModel.removeElementAt(index);
                 Main.accountManager.removeAccount(index);

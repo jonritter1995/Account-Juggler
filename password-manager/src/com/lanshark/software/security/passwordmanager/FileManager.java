@@ -1,6 +1,6 @@
 package com.lanshark.software.security.passwordmanager;
 
-import com.lanshark.software.util.KeyValuePair;
+import com.lanshark.software.security.passwordmanager.util.ComplexFieldPair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -281,31 +281,31 @@ public class FileManager
                 Element secQuestionListElement = document.createElement("securityQuestions");
                 Element customFieldListElement = document.createElement("customFields");
 
-                for (KeyValuePair<String, String> email : account.getEmailAddresses())
+                for (ComplexFieldPair<String, String> email : account.getEmailAddresses())
                 {
                     Element emailElement = document.createElement("email");
-                    emailElement.setAttribute("id", email.getKey());
-                    emailElement.setTextContent(email.getValue());
+                    emailElement.setAttribute("id", (String)email.getKey());
+                    emailElement.setTextContent((String)email.getValue());
                     emailListElement.appendChild(emailElement);
                 }
 
-                for (KeyValuePair<String, String> securityQuestion : account.getSecurityQuestions())
+                for (ComplexFieldPair<String, String> securityQuestion : account.getSecurityQuestions())
                 {
                     Element secQuestionElement = document.createElement("securityQuestion");
                     Element questionElement = document.createElement("question");
-                    questionElement.setTextContent(securityQuestion.getKey());
+                    questionElement.setTextContent((String)securityQuestion.getKey());
                     Element answerElement = document.createElement("answer");
-                    answerElement.setTextContent(securityQuestion.getValue());
+                    answerElement.setTextContent((String)securityQuestion.getValue());
                     secQuestionElement.appendChild(questionElement);
                     secQuestionElement.appendChild(answerElement);
                     secQuestionListElement.appendChild(secQuestionElement);
                 }
 
-                for (KeyValuePair<String, String> customField : account.getCustomFields())
+                for (ComplexFieldPair<String, String> customField : account.getCustomFields())
                 {
                     Element customFieldElement = document.createElement("field");
-                    customFieldElement.setAttribute("key", customField.getKey());
-                    customFieldElement.setTextContent(customField.getValue());
+                    customFieldElement.setAttribute("key", (String)customField.getKey());
+                    customFieldElement.setTextContent((String)customField.getValue());
                     customFieldListElement.appendChild(customFieldElement);
                 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.MainGUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.lanshark.software.security.passwordmanager.gui.MainGUI">
   <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
       <xy x="20" y="20" width="550" height="600"/>
@@ -199,7 +199,7 @@
                   <toolTipText value=""/>
                 </properties>
               </component>
-              <component id="7d40e" class="javax.swing.JButton" binding="emailButton">
+              <component id="7d40e" class="javax.swing.JButton" binding="addEmailButton">
                 <constraints/>
                 <properties>
                   <font/>
@@ -212,7 +212,7 @@
                   <verticalTextPosition value="0"/>
                 </properties>
               </component>
-              <component id="ac9d9" class="javax.swing.JButton">
+              <component id="ac9d9" class="javax.swing.JButton" binding="deleteEmailButton">
                 <constraints/>
                 <properties>
                   <font/>
@@ -439,12 +439,6 @@
               </component>
             </children>
           </grid>
-          <component id="adc24" class="javax.swing.JButton" binding="updateAccountButton">
-            <constraints/>
-            <properties>
-              <text value="Update"/>
-            </properties>
-          </component>
           <component id="705ad" class="javax.swing.JButton" binding="clearButton" default-binding="true">
             <constraints/>
             <properties>

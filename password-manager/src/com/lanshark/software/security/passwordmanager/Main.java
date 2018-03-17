@@ -1,6 +1,6 @@
 package com.lanshark.software.security.passwordmanager;
 
-import com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui.MainGUI;
+import com.lanshark.software.security.passwordmanager.gui.MainGUI;
 
 import javax.swing.*;
 import java.io.File;

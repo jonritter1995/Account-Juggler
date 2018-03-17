@@ -1,4 +1,4 @@
-package com.lanshark.software.security.passwordmanager.com.lanshark.software.security.passwordmanager.gui;
+package com.lanshark.software.security.passwordmanager.gui;
 
 import javax.swing.*;
 import java.awt.event.*;

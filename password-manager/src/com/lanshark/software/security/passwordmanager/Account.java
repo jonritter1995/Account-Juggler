@@ -1,6 +1,6 @@
 package com.lanshark.software.security.passwordmanager;
 
-import com.lanshark.software.util.KeyValuePair;
+import com.lanshark.software.security.passwordmanager.util.ComplexFieldPair;
 
 import java.util.ArrayList;
 
@@ -10,8 +10,22 @@ import java.util.ArrayList;
  * @author  Jonthan Ritter
  * @version 1.0
  */
-public class Account
+public class Account implements Comparable<Account>
 {
+
+    public static final int USERNAME = 0;
+
+    public static final int PASSWORD = 1;
+
+    public static final int PIN = 2;
+
+    public static final int EMAILS = 3;
+
+    public static final int SEC_QUESTIONS = 4;
+
+    public static final int CUSTOM_FIELDS = 5;
+
+    public static final int NOTE = 6;
 
     /**
      * The name of the service that the account is for.
@@ -38,17 +52,17 @@ public class Account
      * A list of email addresses associated with the account.
      * i.e. Primary email, recovery email.
      */
-    private ArrayList<KeyValuePair<String, String>> emailAddresses = new ArrayList<KeyValuePair<String, String>>();
+    private ArrayList<ComplexFieldPair<String, String>> emailAddresses = new ArrayList<ComplexFieldPair<String, String>>();
 
     /**
      * Security questions and answers linked to the account.
      */
-    private ArrayList<KeyValuePair<String, String>> securityQuestions = new ArrayList<KeyValuePair<String, String>>();
+    private ArrayList<ComplexFieldPair<String, String>> securityQuestions = new ArrayList<ComplexFieldPair<String, String>>();
 
     /**
      * Custom fields for accounts with other settings.
      */
-    private ArrayList<KeyValuePair<String, String>> customFields = new ArrayList<KeyValuePair<String, String>>();
+    private ArrayList<ComplexFieldPair<String, String>> customFields = new ArrayList<ComplexFieldPair<String, String>>();
 
     /**
      * A note about the account or account details.
@@ -159,7 +173,7 @@ public class Account
      *
      * @return	The List of NameValuePair objects representing email addresses associated with the account.
      */
-    public ArrayList<KeyValuePair<String, String>> getEmailAddresses()
+    public ArrayList<ComplexFieldPair<String, String>> getEmailAddresses()
     {
         return this.emailAddresses;
     }
@@ -169,7 +183,7 @@ public class Account
      *
      * @param emailAddresses	The List of email addresses to associate with the account.
      */
-    public void setEmailAddresses(ArrayList<KeyValuePair<String, String>> emailAddresses)
+    public void setEmailAddresses(ArrayList<ComplexFieldPair<String, String>> emailAddresses)
     {
         this.emailAddresses = emailAddresses;
     }
@@ -182,13 +196,29 @@ public class Account
      */
     public String getEmailAddress(String key)
     {
-        for (KeyValuePair<String, String> kv : this.emailAddresses)
+        for (ComplexFieldPair<String, String> kv : this.emailAddresses)
         {
             if (kv.getKey().equals(key))
                 return (String)kv.getValue();
         }
 
         return null;
+    }
+
+    public ComplexFieldPair<String, String> getEmailPair(String key)
+    {
+        for (ComplexFieldPair<String, String> kv : this.emailAddresses)
+        {
+            if (kv.getKey().equals(key))
+                return kv;
+        }
+
+        return null;
+    }
+
+    public ComplexFieldPair<String, String> getEmailPair(int index)
+    {
+        return emailAddresses.get(index);
     }
 
     /**
@@ -201,11 +231,32 @@ public class Account
      * @param emailName			The name of the email address.
      * @param emailAddress		The email address.
      */
-    public void addEmail(String emailName, String emailAddress)
+    public boolean addEmail(String emailName, String emailAddress)
     {
-        KeyValuePair<String, String> email = new KeyValuePair<String, String>(emailName, emailAddress);
+        ComplexFieldPair<String, String> email = new ComplexFieldPair<String, String>(emailName, emailAddress);
         if (!this.emailAddresses.contains(email))
+        {
             this.emailAddresses.add(email);
+            return true;
+        }
+
+        return false;
+    }
+
+    /**
+     * Adds a email identifier and email address pair to the list of email addresses.
+     *
+     * @param email     The ComplexFieldPair that contains the email address and id.
+     */
+    public boolean addEmail(ComplexFieldPair<String, String> email)
+    {
+        if (!this.emailAddresses.contains(email))
+        {
+            this.emailAddresses.add(email);
+            return true;
+        }
+
+        return false;
     }
 
     /**
@@ -215,7 +266,7 @@ public class Account
      */
     public void removeEmail(String emailName)
     {
-        KeyValuePair<String, String> email = new KeyValuePair<String, String>(emailName, "");
+        ComplexFieldPair<String, String> email = new ComplexFieldPair<String, String>(emailName, "");
         if (this.emailAddresses.contains(email))
             this.emailAddresses.remove(email);
     }
@@ -225,7 +276,7 @@ public class Account
      *
      * @return	The list of security questions and answers.
      */
-    public ArrayList<KeyValuePair<String, String>> getSecurityQuestions()
+    public ArrayList<ComplexFieldPair<String, String>> getSecurityQuestions()
     {
         return this.securityQuestions;
     }
@@ -235,7 +286,7 @@ public class Account
      *
      * @param securityQuestions		The List of security questions and answers.
      */
-    public void setSecurityQuestions(ArrayList<KeyValuePair<String, String>> securityQuestions)
+    public void setSecurityQuestions(ArrayList<ComplexFieldPair<String, String>> securityQuestions)
     {
         this.securityQuestions = securityQuestions;
     }
@@ -248,7 +299,7 @@ public class Account
      */
     public void addSecurityQuestion(String question, String answer)
     {
-        KeyValuePair<String, String> questionAnswer = new KeyValuePair<String, String>(question, answer);
+        ComplexFieldPair<String, String> questionAnswer = new ComplexFieldPair<String, String>(question, answer);
         if (!this.securityQuestions.contains(questionAnswer))
             this.securityQuestions.add(questionAnswer);
     }
@@ -268,7 +319,7 @@ public class Account
      *
      * @return	The List of custom fields associate with the account.
      */
-    public ArrayList<KeyValuePair<String, String>> getCustomFields()
+    public ArrayList<ComplexFieldPair<String, String>> getCustomFields()
     {
         return this.customFields;
     }
@@ -278,7 +329,7 @@ public class Account
      *
      * @param customFields	The List of custom fields to add.
      */
-    public void setCustomFields(ArrayList<KeyValuePair<String, String>> customFields)
+    public void setCustomFields(ArrayList<ComplexFieldPair<String, String>> customFields)
     {
         this.customFields = customFields;
     }
@@ -291,7 +342,7 @@ public class Account
      */
     public void addCustomField(String fieldName, String fieldValue)
     {
-        KeyValuePair<String, String> field = new KeyValuePair<String, String>(fieldName, fieldValue);
+        ComplexFieldPair<String, String> field = new ComplexFieldPair<String, String>(fieldName, fieldValue);
         if (!this.customFields.contains(field))
             this.customFields.add(field);
     }
@@ -303,7 +354,7 @@ public class Account
      */
     public void removeCustomField(String fieldName)
     {
-        KeyValuePair<String, String> field = new KeyValuePair<String, String>(fieldName, "");
+        ComplexFieldPair<String, String> field = new ComplexFieldPair<String, String>(fieldName, "");
         if (this.customFields.contains(field))
             this.customFields.remove(field);
     }
@@ -329,12 +380,29 @@ public class Account
     }
 
     /**
+     * Sets the
+     * @param field
+     * @param value
+     */
+    public void setStringField(int field, String value)
+    {
+        switch (field)
+        {
+            case USERNAME:    this.username = value;  break;
+            case PASSWORD:    this.password = value;  break;
+            case PIN:         this.pin = value;       break;
+            case NOTE:        this.note = value;      break;
+        }
+    }
+
+    /**
      * Compares two Account objects.
      * Account object comparison is based on the accountName string.
      *
      * @param other		The Account to compare with.
      * @return			1 if this.accountName comes before other.accountName alphabetically.
      */
+    @Override
     public int compareTo(Account other)
     {
         return this.accountName.compareTo(other.accountName);
@@ -349,7 +417,7 @@ public class Account
     @Override
     public boolean equals(Object obj)
     {
-        if (obj == null)
+        if (obj == null || !(obj instanceof Account))
             return false;
         else
             return this.accountName.equals(((Account)obj).getAccountName());

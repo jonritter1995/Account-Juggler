@@ -206,8 +206,22 @@ public class MainGUI
                     emailListModel.addElement(email);
                 }
 
-                emailIDField.setText("");
-                emailAddressField.setText("");
+                if (emailListModel.getSize() == 0)
+                {
+                    emailIDField.setText("");
+                    emailAddressField.setText("");
+                    emailIDField.setEnabled(false);
+                    emailAddressField.setEnabled(false);
+                }
+                else
+                {
+                    ComplexFieldPair<String, String> email;
+                    email = Main.accountManager.getAccountByIndex(accountList.getSelectedIndex()).getEmailPair(0);
+                    emailIDField.setText(email.getKey().toString());
+                    emailAddressField.setText(email.getValue().toString());
+                    emailIDField.setEnabled(true);
+                    emailAddressField.setEnabled(true);
+                }
             }
         });
 
@@ -303,6 +317,33 @@ public class MainGUI
                 emailIDField.setText((String)email.getKey());
                 emailAddressField.setText("");
                 emailDropdown.setSelectedIndex(emailListModel.getSize() - 1);
+                emailIDField.setEnabled(true);
+                emailAddressField.setEnabled(true);
+            }
+        });
+
+        deleteEmailButton.addActionListener(new ActionListener()
+        {
+            @Override
+            public void actionPerformed(ActionEvent e)
+            {
+                Main.accountManager.getAccountByIndex(accountList.getSelectedIndex()).removeEmail(emailIDField.getText());
+                emailListModel.removeElement(emailListModel.getSelectedItem());
+
+                if (Main.accountManager.getAccountByIndex(accountList.getSelectedIndex()).getEmailAddresses().size() == 0)
+                {
+                    emailIDField.setText("");
+                    emailAddressField.setText("");
+                    emailIDField.setEnabled(false);
+                    emailAddressField.setEnabled(false);
+                }
+                else
+                {
+                    ComplexFieldPair email = Main.accountManager.getAccountByIndex(accountList.getSelectedIndex())
+                            .getEmailPair(emailDropdown.getSelectedIndex());
+                    emailIDField.setText(email.getKey().toString());
+                    emailAddressField.setText(email.getValue().toString());
+                }
             }
         });
 
@@ -365,6 +406,12 @@ public class MainGUI
             }
 
         });
+
+        // Add the accounts that were loaded from the account file to the UI account list
+        for (int i = 0; i < Main.accountManager.getAllAccounts().size(); i++)
+        {
+            accountListModel.addElement(Main.accountManager.getAccountByIndex(i).getAccountName());
+        }
     }
 
     private boolean nameAlreadyInList(String name)

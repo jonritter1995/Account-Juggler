@@ -65,9 +65,9 @@ public class Main
             }
         }
 
-        mainGUI = new MainGUI();
         fileManager = new FileManager(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION));
         accountManager = new AccountManager(fileManager.loadAccounts("elderscrolls"));
+        mainGUI = new MainGUI();
         //fileManager.saveAccounts(accountManager.getAllAccounts(), "elderscrolls");
     }
 

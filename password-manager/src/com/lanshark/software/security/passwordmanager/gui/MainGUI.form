@@ -234,6 +234,7 @@
               <component id="56abf" class="javax.swing.JTextField" binding="emailIDField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>
@@ -248,6 +249,7 @@
               <component id="2f74e" class="javax.swing.JTextField" binding="emailAddressField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>
@@ -314,6 +316,7 @@
               <component id="793ec" class="javax.swing.JTextField" binding="questionField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>
@@ -328,6 +331,7 @@
               <component id="575a8" class="javax.swing.JTextField" binding="answerField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>
@@ -394,6 +398,7 @@
               <component id="22cef" class="javax.swing.JTextField" binding="fieldField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>
@@ -408,6 +413,7 @@
               <component id="df14e" class="javax.swing.JTextField" binding="valueField">
                 <constraints/>
                 <properties>
+                  <enabled value="false"/>
                   <preferredSize width="250" height="28"/>
                 </properties>
               </component>

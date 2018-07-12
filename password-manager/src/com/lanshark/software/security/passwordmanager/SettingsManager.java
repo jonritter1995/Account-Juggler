@@ -10,6 +10,8 @@ public class SettingsManager
 
     public static final String PASSWORD_FILE_SAVE_LOCATION = "PasswordFileSaveLocation";
 
+    public static final String UI_THEME = "Theme";
+
     /**
      * The application's settings.
      */

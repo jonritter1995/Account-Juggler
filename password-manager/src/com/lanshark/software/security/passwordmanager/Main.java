@@ -6,10 +6,21 @@ import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Launches the Account-Juggler application.
+ *
+ * @author Jonathan Ritter
+ */
 public class Main
 {
-
+    /**
+     * Name of the application. Displays on the top of the application window.
+     */
     public static final String TITLE = "Password Jester";
+
+    /**
+     * The build version of the application.
+     */
     public static final String VERSION = "v0.0.1";
 
     public static MainGUI mainGUI;
@@ -19,24 +30,9 @@ public class Main
 
     public static void main(String[] args)
     {
-        // Set the UI Look and Feel to Nimbus.
-        try
-        {
-            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
-            {
-                if ("Nimbus".equals(info.getName()))
-                {
-                    UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
-
+        // Load the application settings.
         settingsManager = new SettingsManager();
+        setLookAndFeel();
 
         // Make sure the password file is a valid location.
         while (settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION) == null
@@ -69,6 +65,40 @@ public class Main
         accountManager = new AccountManager(fileManager.loadAccounts("elderscrolls"));
         mainGUI = new MainGUI();
         //fileManager.saveAccounts(accountManager.getAllAccounts(), "elderscrolls");
+    }
+
+    /**
+     * Sets the look and feel of the UI based on the application settings.
+     */
+    private static void setLookAndFeel()
+    {
+        try
+        {
+            String theme = settingsManager.getProperty(SettingsManager.UI_THEME);
+
+            switch (theme)
+            {
+                case "Native":
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    break;
+                case "Nimbus":
+                    for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels())
+                    {
+                        if ("Nimbus".equals(info.getName()))
+                        {
+                            UIManager.setLookAndFeel(info.getClassName());
+                            break;
+                        }
+                    }
+
+                    break;
+                default: // Todo: handle more look & feels
+            }
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 }

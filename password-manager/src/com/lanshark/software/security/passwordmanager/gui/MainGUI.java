@@ -412,6 +412,22 @@ public class MainGUI
         {
             accountListModel.addElement(Main.accountManager.getAccountByIndex(i).getAccountName());
         }
+        accountNameField.addFocusListener(new FocusAdapter()
+        {
+            @Override
+            public void focusGained(FocusEvent e)
+            {
+                super.focusGained(e);
+                accountList.setEnabled(false);
+            }
+
+            @Override
+            public void focusLost(FocusEvent e)
+            {
+                super.focusLost(e);
+                accountList.setEnabled(true);
+            }
+        });
     }
 
     private boolean nameAlreadyInList(String name)

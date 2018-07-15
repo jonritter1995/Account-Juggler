@@ -30,11 +30,11 @@ public class Main
 
     public static void main(String[] args)
     {
-        // Load the application settings.
+        // Load the application settings and set UI theme.
         settingsManager = new SettingsManager();
-        setLookAndFeel();
+        setLookAndFeel(settingsManager.getProperty(SettingsManager.UI_THEME));
 
-        // Make sure the password file is a valid location.
+        // Make sure the account file is a valid location. If not, set account file save location.
         while (settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION) == null
                 || "".equals(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION)))
         {
@@ -61,6 +61,7 @@ public class Main
             }
         }
 
+        // Load the account file and launch UI.
         fileManager = new FileManager(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION));
         accountManager = new AccountManager(fileManager.loadAccounts("elderscrolls"));
         mainGUI = new MainGUI();
@@ -70,12 +71,10 @@ public class Main
     /**
      * Sets the look and feel of the UI based on the application settings.
      */
-    private static void setLookAndFeel()
+    private static void setLookAndFeel(String theme)
     {
         try
         {
-            String theme = settingsManager.getProperty(SettingsManager.UI_THEME);
-
             switch (theme)
             {
                 case "Native":

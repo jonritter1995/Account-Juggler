@@ -1,4 +1,4 @@
-package com.lanshark.software.security.passwordmanager;
+package com.lanshark.software.security.accountmanager;
 
 import java.io.File;
 import java.io.FileInputStream;

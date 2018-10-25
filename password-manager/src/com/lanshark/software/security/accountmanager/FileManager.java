@@ -1,6 +1,6 @@
-package com.lanshark.software.security.passwordmanager;
+package com.lanshark.software.security.accountmanager;
 
-import com.lanshark.software.security.passwordmanager.util.ComplexFieldPair;
+import com.lanshark.software.security.accountmanager.util.ComplexFieldPair;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;

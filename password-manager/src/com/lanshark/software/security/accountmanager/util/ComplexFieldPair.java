@@ -1,4 +1,4 @@
-package com.lanshark.software.security.passwordmanager.util;
+package com.lanshark.software.security.accountmanager.util;
 
 import com.lanshark.software.util.MutablePair;
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.lanshark.software.security.passwordmanager.gui.MainGUI">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.lanshark.software.security.accountmanager.gui.MainGUI">
   <grid id="27dc6" binding="mainPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
     <constraints>
-      <xy x="20" y="20" width="550" height="600"/>
+      <xy x="20" y="20" width="999" height="910"/>
     </constraints>
     <properties>
       <minimumSize width="550" height="600"/>
@@ -10,487 +10,482 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="d830" binding="accountListPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints border-constraint="West"/>
-        <properties>
-          <minimumSize width="0" height="0"/>
-          <preferredSize width="150" height="0"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <scrollpane id="660c6">
-            <constraints border-constraint="Center"/>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="5fb4" class="javax.swing.JList" binding="accountList">
-                <constraints/>
-                <properties>
-                  <enabled value="true"/>
-                  <model/>
-                </properties>
-                <clientProperties>
-                  <List.isFileList class="java.lang.Boolean" value="false"/>
-                </clientProperties>
-              </component>
-            </children>
-          </scrollpane>
-          <grid id="6ba4c" binding="accountListModifierPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
-            <constraints border-constraint="South"/>
-            <properties/>
-            <border type="none"/>
-            <children>
-              <component id="6ceba" class="javax.swing.JButton" binding="addAccountButton">
-                <constraints border-constraint="North"/>
-                <properties>
-                  <text value="Add Account"/>
-                </properties>
-              </component>
-              <component id="2b694" class="javax.swing.JButton" binding="deleteAccountButton">
-                <constraints border-constraint="South"/>
-                <properties>
-                  <text value="Delete Selected"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-        </children>
-      </grid>
-      <grid id="7941" binding="accountEditorPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+      <grid id="bde02" layout-manager="BorderLayout" hgap="0" vgap="0">
         <constraints border-constraint="Center"/>
-        <properties>
-          <font style="1"/>
-          <minimumSize width="350" height="10"/>
-          <preferredSize width="350" height="10"/>
-        </properties>
+        <properties/>
         <border type="none"/>
         <children>
-          <grid id="82d3a" binding="accountNamePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="30"/>
-              <preferredSize width="400" height="35"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="7f987" class="javax.swing.JLabel" binding="accountNameLable">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Account Name:"/>
-                  <toolTipText value="The website or organization that this account is for."/>
-                </properties>
-              </component>
-              <component id="e28e1" class="javax.swing.JTextField" binding="accountNameField">
-                <constraints/>
-                <properties>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="ad66b" binding="usernamePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <alignmentX value="0.5"/>
-              <minimumSize width="400" height="30"/>
-              <preferredSize width="400" height="35"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="4669a" class="javax.swing.JLabel" binding="usernameLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Username:"/>
-                  <toolTipText value="The login username for the website/application."/>
-                </properties>
-              </component>
-              <component id="34d07" class="javax.swing.JTextField" binding="usernameField">
-                <constraints/>
-                <properties>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="cdbbf" binding="passwordPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="30"/>
-              <preferredSize width="400" height="35"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="6d87d" class="javax.swing.JLabel" binding="passwordLabel">
-                <constraints/>
-                <properties>
-                  <minimumSize width="100" height="16"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Password:"/>
-                  <toolTipText value="The password used to login to the website/application. It is recommended that you generate a random password and change it every few months."/>
-                </properties>
-              </component>
-              <component id="b9557" class="javax.swing.JTextField" binding="passwordField">
-                <constraints/>
-                <properties>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-              <component id="7eec9" class="javax.swing.JButton" binding="generatePasswordButton">
-                <constraints/>
-                <properties>
-                  <preferredSize width="30" height="22"/>
-                  <text value="..."/>
-                  <toolTipText value="Generate a password. "/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="7619b" binding="pinPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="30"/>
-              <preferredSize width="400" height="35"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="edc67" class="javax.swing.JLabel" binding="pinLabel">
-                <constraints/>
-                <properties>
-                  <minimumSize width="100" height="16"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Pin #:"/>
-                  <toolTipText value="Used for any type of pin or number that needs to be entered to login to an account."/>
-                </properties>
-              </component>
-              <component id="ed768" class="javax.swing.JTextField" binding="pinField">
-                <constraints/>
-                <properties>
-                  <minimumSize width="200" height="24"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="8b0bd" binding="emailPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="110"/>
-              <preferredSize width="400" height="110"/>
-            </properties>
-            <border type="etched"/>
-            <children>
-              <component id="4ef51" class="javax.swing.JLabel" binding="emailLabel">
-                <constraints/>
-                <properties>
-                  <font style="1"/>
-                  <horizontalAlignment value="2"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Email Addresses:"/>
-                  <toolTipText value="The list of email addresses associated with this account."/>
-                </properties>
-              </component>
-              <component id="ea59f" class="javax.swing.JComboBox" binding="emailDropdown">
-                <constraints/>
-                <properties>
-                  <editable value="false"/>
-                  <preferredSize width="175" height="28"/>
-                  <toolTipText value=""/>
-                </properties>
-              </component>
-              <component id="7d40e" class="javax.swing.JButton" binding="addEmailButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <maximumSize width="45" height="22"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="+"/>
-                  <toolTipText value="Add an email address."/>
-                  <verticalAlignment value="0"/>
-                  <verticalTextPosition value="0"/>
-                </properties>
-              </component>
-              <component id="ac9d9" class="javax.swing.JButton" binding="deleteEmailButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <label value="-"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="-"/>
-                  <toolTipText value="Remove the selected email address from the list."/>
-                </properties>
-              </component>
-              <component id="c6ba2" class="javax.swing.JLabel" binding="emailIDLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Email Identifier:"/>
-                  <toolTipText value="A description of the primary use of the email (i.e. Primary, Family, Work)"/>
-                </properties>
-              </component>
-              <component id="56abf" class="javax.swing.JTextField" binding="emailIDField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-              <component id="fd76c" class="javax.swing.JLabel" binding="emailAddressLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Address:"/>
-                  <toolTipText value="The actual email address."/>
-                </properties>
-              </component>
-              <component id="2f74e" class="javax.swing.JTextField" binding="emailAddressField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="9f757" binding="securityQuestionPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="110"/>
-              <preferredSize width="400" height="110"/>
-            </properties>
-            <border type="etched"/>
-            <children>
-              <component id="7a27d" class="javax.swing.JLabel" binding="secQuestionLabel">
-                <constraints/>
-                <properties>
-                  <font style="1"/>
-                  <horizontalAlignment value="2"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Sec. Questions:"/>
-                  <toolTipText value="A list of security questions that must be answered to login to or recover your account."/>
-                </properties>
-              </component>
-              <component id="87ea5" class="javax.swing.JComboBox" binding="secQuestionDropdown">
-                <constraints/>
-                <properties>
-                  <editable value="false"/>
-                  <preferredSize width="175" height="28"/>
-                  <toolTipText value=""/>
-                </properties>
-              </component>
-              <component id="b1e3c" class="javax.swing.JButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <maximumSize width="45" height="22"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="+"/>
-                  <toolTipText value="Add a security question to the list."/>
-                  <verticalAlignment value="0"/>
-                  <verticalTextPosition value="0"/>
-                </properties>
-              </component>
-              <component id="dbdc3" class="javax.swing.JButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <label value="-"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="-"/>
-                  <toolTipText value="Remove the selected security question and answer from the list."/>
-                </properties>
-              </component>
-              <component id="fc35e" class="javax.swing.JLabel" binding="questionLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Question:"/>
-                  <toolTipText value="The security question."/>
-                </properties>
-              </component>
-              <component id="793ec" class="javax.swing.JTextField" binding="questionField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-              <component id="4db2d" class="javax.swing.JLabel" binding="answerLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Answer:"/>
-                  <toolTipText value="The answer to the security question."/>
-                </properties>
-              </component>
-              <component id="575a8" class="javax.swing.JTextField" binding="answerField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="e5b22" binding="customFieldPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="110"/>
-              <preferredSize width="400" height="110"/>
-            </properties>
-            <border type="etched"/>
-            <children>
-              <component id="6ee68" class="javax.swing.JLabel" binding="customFieldLabel">
-                <constraints/>
-                <properties>
-                  <font style="1"/>
-                  <horizontalAlignment value="2"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Custom Fields:"/>
-                  <toolTipText value="A list of custom fields for accounts that require extra information."/>
-                </properties>
-              </component>
-              <component id="58606" class="javax.swing.JComboBox" binding="customFieldDropdown">
-                <constraints/>
-                <properties>
-                  <editable value="false"/>
-                  <preferredSize width="175" height="28"/>
-                  <toolTipText value=""/>
-                </properties>
-              </component>
-              <component id="11495" class="javax.swing.JButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <maximumSize width="45" height="22"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="+"/>
-                  <toolTipText value="Add a custom field to the list."/>
-                  <verticalAlignment value="0"/>
-                  <verticalTextPosition value="0"/>
-                </properties>
-              </component>
-              <component id="873b1" class="javax.swing.JButton">
-                <constraints/>
-                <properties>
-                  <font/>
-                  <label value="-"/>
-                  <minimumSize width="45" height="25"/>
-                  <preferredSize width="45" height="25"/>
-                  <text value="-"/>
-                  <toolTipText value="Remove the selected custom field from the list."/>
-                </properties>
-              </component>
-              <component id="eba4b" class="javax.swing.JLabel" binding="fieldLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Field:"/>
-                  <toolTipText value="The name of the custom field (i.e. Address, phone number). It is not recommended to store financial information."/>
-                </properties>
-              </component>
-              <component id="22cef" class="javax.swing.JTextField" binding="fieldField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-              <component id="b8203" class="javax.swing.JLabel" binding="valueLabel">
-                <constraints/>
-                <properties>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Value:"/>
-                  <toolTipText value="The value of the custom field."/>
-                </properties>
-              </component>
-              <component id="df14e" class="javax.swing.JTextField" binding="valueField">
-                <constraints/>
-                <properties>
-                  <enabled value="false"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="b2b8e" binding="notePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
-            <constraints/>
-            <properties>
-              <minimumSize width="400" height="30"/>
-              <preferredSize width="400" height="35"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="c772e" class="javax.swing.JLabel" binding="noteLabel">
-                <constraints/>
-                <properties>
-                  <minimumSize width="100" height="16"/>
-                  <preferredSize width="100" height="16"/>
-                  <text value="Note:"/>
-                  <toolTipText value="Any notes you wish to make regarding this account."/>
-                </properties>
-              </component>
-              <component id="d3f0b" class="javax.swing.JTextField" binding="noteField">
-                <constraints/>
-                <properties>
-                  <minimumSize width="250" height="24"/>
-                  <preferredSize width="250" height="28"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <component id="705ad" class="javax.swing.JButton" binding="clearButton" default-binding="true">
-            <constraints/>
-            <properties>
-              <text value="Clear"/>
-              <toolTipText value="Clear all fields for this account. This will remove all email addresses, security questions, and custom fields."/>
-            </properties>
-          </component>
-        </children>
-      </grid>
-      <grid id="835c9" binding="headerPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
-        <constraints border-constraint="North"/>
-        <properties>
-          <preferredSize width="0" height="20"/>
-        </properties>
-        <border type="none"/>
-        <children>
-          <grid id="b7b71" binding="eastHeaderPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
-            <constraints border-constraint="West"/>
-            <properties>
-              <preferredSize width="150" height="0"/>
-            </properties>
-            <border type="none"/>
-            <children>
-              <component id="6fa80" class="javax.swing.JLabel" binding="accountHeader">
-                <constraints/>
-                <properties>
-                  <font name="Fira Code" style="1"/>
-                  <text value="Account List"/>
-                </properties>
-              </component>
-            </children>
-          </grid>
-          <grid id="3276c" binding="centerHeaderPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+          <splitpane id="421bb" binding="listEditorSplit">
             <constraints border-constraint="Center"/>
-            <properties/>
+            <properties>
+              <preferredSize width="510" height="10"/>
+            </properties>
             <border type="none"/>
             <children>
-              <component id="2236d" class="javax.swing.JLabel" binding="accountEditorHeader">
-                <constraints/>
+              <grid id="d830" binding="accountListPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <splitpane position="left"/>
+                </constraints>
                 <properties>
-                  <font name="Fira Code" style="1"/>
-                  <text value="Account Editor"/>
+                  <minimumSize width="0" height="0"/>
+                  <preferredSize width="150" height="0"/>
                 </properties>
-              </component>
+                <border type="none"/>
+                <children>
+                  <grid id="6ba4c" binding="accountListModifierPanel" layout-manager="BorderLayout" hgap="0" vgap="0">
+                    <constraints border-constraint="South"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="6ceba" class="javax.swing.JButton" binding="addAccountButton">
+                        <constraints border-constraint="North"/>
+                        <properties>
+                          <text value="Add Account"/>
+                        </properties>
+                      </component>
+                      <component id="2b694" class="javax.swing.JButton" binding="deleteAccountButton">
+                        <constraints border-constraint="South"/>
+                        <properties>
+                          <text value="Delete Selected"/>
+                        </properties>
+                      </component>
+                    </children>
+                  </grid>
+                  <scrollpane id="660c6">
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <component id="5fb4" class="javax.swing.JList" binding="accountList">
+                        <constraints/>
+                        <properties>
+                          <enabled value="true"/>
+                          <model/>
+                        </properties>
+                        <clientProperties>
+                          <List.isFileList class="java.lang.Boolean" value="false"/>
+                        </clientProperties>
+                      </component>
+                    </children>
+                  </scrollpane>
+                </children>
+              </grid>
+              <grid id="b56ad" layout-manager="BorderLayout" hgap="0" vgap="0">
+                <constraints>
+                  <splitpane position="right"/>
+                </constraints>
+                <properties/>
+                <border type="none"/>
+                <children>
+                  <scrollpane id="c74b7">
+                    <constraints border-constraint="Center"/>
+                    <properties/>
+                    <border type="none"/>
+                    <children>
+                      <grid id="7941" binding="accountEditorPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="1">
+                        <constraints/>
+                        <properties>
+                          <font style="1"/>
+                          <minimumSize width="0" height="0"/>
+                          <preferredSize width="350" height="10"/>
+                        </properties>
+                        <border type="none"/>
+                        <children>
+                          <grid id="82d3a" binding="accountNamePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="30"/>
+                              <preferredSize width="400" height="35"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="7f987" class="javax.swing.JLabel" binding="accountNameLable">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Account Name:"/>
+                                  <toolTipText value="The website or organization that this account is for."/>
+                                </properties>
+                              </component>
+                              <component id="e28e1" class="javax.swing.JTextField" binding="accountNameField">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="ad66b" binding="usernamePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <alignmentX value="0.5"/>
+                              <minimumSize width="400" height="30"/>
+                              <preferredSize width="400" height="35"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="4669a" class="javax.swing.JLabel" binding="usernameLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Username:"/>
+                                  <toolTipText value="The login username for the website/application."/>
+                                </properties>
+                              </component>
+                              <component id="34d07" class="javax.swing.JTextField" binding="usernameField">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="cdbbf" binding="passwordPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="30"/>
+                              <preferredSize width="400" height="35"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="6d87d" class="javax.swing.JLabel" binding="passwordLabel">
+                                <constraints/>
+                                <properties>
+                                  <minimumSize width="100" height="16"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Password:"/>
+                                  <toolTipText value="The password used to login to the website/application. It is recommended that you generate a random password and change it every few months."/>
+                                </properties>
+                              </component>
+                              <component id="b9557" class="javax.swing.JTextField" binding="passwordField">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                              <component id="7eec9" class="javax.swing.JButton" binding="generatePasswordButton">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="30" height="22"/>
+                                  <text value="..."/>
+                                  <toolTipText value="Generate a password. "/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="7619b" binding="pinPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="30"/>
+                              <preferredSize width="400" height="35"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="edc67" class="javax.swing.JLabel" binding="pinLabel">
+                                <constraints/>
+                                <properties>
+                                  <minimumSize width="100" height="16"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Pin #:"/>
+                                  <toolTipText value="Used for any type of pin or number that needs to be entered to login to an account."/>
+                                </properties>
+                              </component>
+                              <component id="ed768" class="javax.swing.JTextField" binding="pinField">
+                                <constraints/>
+                                <properties>
+                                  <minimumSize width="200" height="24"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="8b0bd" binding="emailPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="110"/>
+                              <preferredSize width="400" height="110"/>
+                            </properties>
+                            <border type="etched"/>
+                            <children>
+                              <component id="4ef51" class="javax.swing.JLabel" binding="emailLabel">
+                                <constraints/>
+                                <properties>
+                                  <font style="1"/>
+                                  <horizontalAlignment value="2"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Email Addresses:"/>
+                                  <toolTipText value="The list of email addresses associated with this account."/>
+                                </properties>
+                              </component>
+                              <component id="ea59f" class="javax.swing.JComboBox" binding="emailDropdown">
+                                <constraints/>
+                                <properties>
+                                  <editable value="false"/>
+                                  <preferredSize width="175" height="28"/>
+                                  <toolTipText value=""/>
+                                </properties>
+                              </component>
+                              <component id="7d40e" class="javax.swing.JButton" binding="addEmailButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <maximumSize width="45" height="22"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="+"/>
+                                  <toolTipText value="Add an email address."/>
+                                  <verticalAlignment value="0"/>
+                                  <verticalTextPosition value="0"/>
+                                </properties>
+                              </component>
+                              <component id="ac9d9" class="javax.swing.JButton" binding="deleteEmailButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <label value="-"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="-"/>
+                                  <toolTipText value="Remove the selected email address from the list."/>
+                                </properties>
+                              </component>
+                              <component id="c6ba2" class="javax.swing.JLabel" binding="emailIDLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Email Identifier:"/>
+                                  <toolTipText value="A description of the primary use of the email (i.e. Primary, Family, Work)"/>
+                                </properties>
+                              </component>
+                              <component id="56abf" class="javax.swing.JTextField" binding="emailIDField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                              <component id="fd76c" class="javax.swing.JLabel" binding="emailAddressLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Address:"/>
+                                  <toolTipText value="The actual email address."/>
+                                </properties>
+                              </component>
+                              <component id="2f74e" class="javax.swing.JTextField" binding="emailAddressField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="9f757" binding="securityQuestionPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="110"/>
+                              <preferredSize width="400" height="110"/>
+                            </properties>
+                            <border type="etched"/>
+                            <children>
+                              <component id="7a27d" class="javax.swing.JLabel" binding="secQuestionLabel">
+                                <constraints/>
+                                <properties>
+                                  <font style="1"/>
+                                  <horizontalAlignment value="2"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Sec. Questions:"/>
+                                  <toolTipText value="A list of security questions that must be answered to login to or recover your account."/>
+                                </properties>
+                              </component>
+                              <component id="87ea5" class="javax.swing.JComboBox" binding="secQuestionDropdown">
+                                <constraints/>
+                                <properties>
+                                  <editable value="false"/>
+                                  <preferredSize width="175" height="28"/>
+                                  <toolTipText value=""/>
+                                </properties>
+                              </component>
+                              <component id="b1e3c" class="javax.swing.JButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <maximumSize width="45" height="22"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="+"/>
+                                  <toolTipText value="Add a security question to the list."/>
+                                  <verticalAlignment value="0"/>
+                                  <verticalTextPosition value="0"/>
+                                </properties>
+                              </component>
+                              <component id="dbdc3" class="javax.swing.JButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <label value="-"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="-"/>
+                                  <toolTipText value="Remove the selected security question and answer from the list."/>
+                                </properties>
+                              </component>
+                              <component id="fc35e" class="javax.swing.JLabel" binding="questionLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Question:"/>
+                                  <toolTipText value="The security question."/>
+                                </properties>
+                              </component>
+                              <component id="793ec" class="javax.swing.JTextField" binding="questionField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                              <component id="4db2d" class="javax.swing.JLabel" binding="answerLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Answer:"/>
+                                  <toolTipText value="The answer to the security question."/>
+                                </properties>
+                              </component>
+                              <component id="575a8" class="javax.swing.JTextField" binding="answerField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="e5b22" binding="customFieldPanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="110"/>
+                              <preferredSize width="400" height="110"/>
+                            </properties>
+                            <border type="etched"/>
+                            <children>
+                              <component id="6ee68" class="javax.swing.JLabel" binding="customFieldLabel">
+                                <constraints/>
+                                <properties>
+                                  <font style="1"/>
+                                  <horizontalAlignment value="2"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Custom Fields:"/>
+                                  <toolTipText value="A list of custom fields for accounts that require extra information."/>
+                                </properties>
+                              </component>
+                              <component id="58606" class="javax.swing.JComboBox" binding="customFieldDropdown">
+                                <constraints/>
+                                <properties>
+                                  <editable value="false"/>
+                                  <preferredSize width="175" height="28"/>
+                                  <toolTipText value=""/>
+                                </properties>
+                              </component>
+                              <component id="11495" class="javax.swing.JButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <maximumSize width="45" height="22"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="+"/>
+                                  <toolTipText value="Add a custom field to the list."/>
+                                  <verticalAlignment value="0"/>
+                                  <verticalTextPosition value="0"/>
+                                </properties>
+                              </component>
+                              <component id="873b1" class="javax.swing.JButton">
+                                <constraints/>
+                                <properties>
+                                  <font/>
+                                  <label value="-"/>
+                                  <minimumSize width="45" height="25"/>
+                                  <preferredSize width="45" height="25"/>
+                                  <text value="-"/>
+                                  <toolTipText value="Remove the selected custom field from the list."/>
+                                </properties>
+                              </component>
+                              <component id="eba4b" class="javax.swing.JLabel" binding="fieldLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Field:"/>
+                                  <toolTipText value="The name of the custom field (i.e. Address, phone number). It is not recommended to store financial information."/>
+                                </properties>
+                              </component>
+                              <component id="22cef" class="javax.swing.JTextField" binding="fieldField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                              <component id="b8203" class="javax.swing.JLabel" binding="valueLabel">
+                                <constraints/>
+                                <properties>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Value:"/>
+                                  <toolTipText value="The value of the custom field."/>
+                                </properties>
+                              </component>
+                              <component id="df14e" class="javax.swing.JTextField" binding="valueField">
+                                <constraints/>
+                                <properties>
+                                  <enabled value="false"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <grid id="b2b8e" binding="notePanel" layout-manager="FlowLayout" hgap="5" vgap="5" flow-align="0">
+                            <constraints/>
+                            <properties>
+                              <minimumSize width="400" height="30"/>
+                              <preferredSize width="400" height="35"/>
+                            </properties>
+                            <border type="none"/>
+                            <children>
+                              <component id="c772e" class="javax.swing.JLabel" binding="noteLabel">
+                                <constraints/>
+                                <properties>
+                                  <minimumSize width="100" height="16"/>
+                                  <preferredSize width="100" height="16"/>
+                                  <text value="Note:"/>
+                                  <toolTipText value="Any notes you wish to make regarding this account."/>
+                                </properties>
+                              </component>
+                              <component id="d3f0b" class="javax.swing.JTextField" binding="noteField">
+                                <constraints/>
+                                <properties>
+                                  <minimumSize width="250" height="24"/>
+                                  <preferredSize width="250" height="28"/>
+                                </properties>
+                              </component>
+                            </children>
+                          </grid>
+                          <component id="705ad" class="javax.swing.JButton" binding="clearButton" default-binding="true">
+                            <constraints/>
+                            <properties>
+                              <text value="Clear"/>
+                              <toolTipText value="Clear all fields for this account. This will remove all email addresses, security questions, and custom fields."/>
+                            </properties>
+                          </component>
+                        </children>
+                      </grid>
+                    </children>
+                  </scrollpane>
+                </children>
+              </grid>
             </children>
-          </grid>
+          </splitpane>
         </children>
       </grid>
     </children>

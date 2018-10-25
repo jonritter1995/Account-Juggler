@@ -1,6 +1,6 @@
-package com.lanshark.software.security.passwordmanager;
+package com.lanshark.software.security.accountmanager;
 
-import com.lanshark.software.security.passwordmanager.gui.MainGUI;
+import com.lanshark.software.security.accountmanager.gui.MainGUI;
 
 import javax.swing.*;
 import java.io.File;
@@ -44,7 +44,8 @@ public class Main
 
             if (fileChooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION)
             {
-                settingsManager.setProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION, fileChooser.getSelectedFile().getPath());
+                settingsManager.setProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION,
+                        fileChooser.getSelectedFile().getPath());
                 settingsManager.saveSettings();
                 File accountFile = new File(settingsManager.getProperty(SettingsManager.PASSWORD_FILE_SAVE_LOCATION));
 

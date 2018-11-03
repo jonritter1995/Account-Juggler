@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10d8c806-79ac-45c8-90fb-0f4a07e3d223" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/AccountManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/AccountManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/FileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/FileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/PasswordGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/PasswordGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/SettingsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/SettingsManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/PasswordGeneratorDialog.form" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/PasswordGeneratorDialog.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/PasswordGeneratorDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/PasswordGeneratorDialog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/util/ComplexFieldPair.java" beforeDir="false" afterPath="$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/util/ComplexFieldPair.java" afterDir="false" />
-    </list>
+    <list default="true" id="10d8c806-79ac-45c8-90fb-0f4a07e3d223" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,21 +12,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MainGUI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
+            <state relative-caret-position="374">
               <caret line="101" column="37" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
-              <folding>
-                <element signature="initializer##0;class#MainGUI#0" expanded="true" />
-              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainGUI.form" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.form">
-          <provider selected="true" editor-type-id="ui-designer" />
         </entry>
       </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
@@ -163,6 +141,7 @@
     </navigator>
     <panes>
       <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,7 +171,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -331,10 +309,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1456" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.328879" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
@@ -358,6 +336,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32986626" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.328879" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -369,13 +348,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/SettingsManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="10" column="86" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7157">
           <caret line="421" column="43" selection-start-line="421" selection-start-column="43" selection-end-line="421" selection-end-column="43" />
-          <folding>
-            <element signature="initializer##0;class#MainGUI#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -747,16 +730,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
+        <state relative-caret-position="374">
           <caret line="101" column="37" selection-start-line="101" selection-start-column="37" selection-end-line="101" selection-end-column="37" />
-          <folding>
-            <element signature="initializer##0;class#MainGUI#0" expanded="true" />
-          </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/password-manager/src/com/lanshark/software/security/accountmanager/gui/MainGUI.form">
-      <provider selected="true" editor-type-id="ui-designer" />
     </entry>
   </component>
   <component name="masterDetails">
